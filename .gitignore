@@ -67,9 +67,6 @@ build/
 *.seed
 *.pid.lock
 
-# Docker
-.dockerignore
-
 # Database
 *.db
 *.sqlite
