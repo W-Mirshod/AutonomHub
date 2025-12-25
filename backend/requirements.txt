@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+pydantic-settings
+httpx
+python-multipart
+python-dotenv
+openai
+ffmpeg-python

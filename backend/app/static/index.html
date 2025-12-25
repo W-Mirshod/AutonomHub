@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutonomHub - AI Video Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <div class="background-glob"></div>
+    <div class="container">
+        <header>
+            <div class="logo">AutonomHub <span class="badge">BETA</span></div>
+            <p class="subtitle">Transform images into stunning videos with AI</p>
+        </header>
+
+        <main>
+            <div class="glass-panel input-section">
+                <form id="generate-form">
+                    <div class="form-group">
+                        <label for="image-url">Image URL</label>
+                        <input type="url" id="image-url" name="image_url" placeholder="https://example.com/image.jpg"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prompt">Prompt</label>
+                        <textarea id="prompt" name="prompt" rows="3"
+                            placeholder="Describe the motion or effect you want..." required></textarea>
+                    </div>
+
+                    <button type="submit" id="generate-btn">
+                        <span class="btn-text">Generate Video</span>
+                        <div class="spinner text-hidden"></div>
+                    </button>
+                    <div id="status-msg"></div>
+                </form>
+            </div>
+
+            <div class="glass-panel preview-section hidden" id="preview-section">
+                <h3>Result</h3>
+                <div class="video-container">
+                    <video id="result-video" controls
+                        poster="https://placehold.co/600x400/1e1e1e/333333?text=Video+Loading..." playsinline>
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="caption-container glass-panel-sm">
+                    <h4>AI Copywriter</h4>
+                    <p id="result-caption" class="caption-text"></p>
+                    <button class="copy-btn" id="copy-caption-btn">Copy Caption</button>
+                </div>
+
+                <div class="analysis-details hidden" id="analysis-details">
+                    <details>
+                        <summary>One-Click Director Notes</summary>
+                        <p id="analysis-prompt" class="muted-text"></p>
+                    </details>
+                </div>
+
+                <button class="secondary-btn" id="download-btn">Download Video</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

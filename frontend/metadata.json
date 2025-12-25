@@ -1,0 +1,5 @@
+{
+  "name": "AutonomHub",
+  "description": "An AI agent that automatically creates short, connected videos based on a user’s text input, simulating an autonomous AI worker experience from planning to execution.",
+  "requestFramePermissions": []
+}
