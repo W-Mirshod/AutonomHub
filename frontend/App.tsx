@@ -104,7 +104,9 @@ interface HistoryItem {
 }
 
 const App: React.FC = () => {
-  const [hasApiKey, setHasApiKey] = useState(false);
+  const [hasApiKey, setHasApiKey] = useState(() => {
+    return !!(process.env.API_KEY || process.env.GEMINI_API_KEY);
+  });
   const { isAuthenticated, login, logout } = useAuth();
   const { balance, charge, addFunds } = useWallet();
   

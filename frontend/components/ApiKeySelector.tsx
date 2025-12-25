@@ -10,10 +10,16 @@ const ApiKeySelector: React.FC<ApiKeySelectorProps> = ({ onKeySelected, errorMes
 
   useEffect(() => {
     const checkKey = async () => {
+      if (process.env.API_KEY || process.env.GEMINI_API_KEY) {
+        onKeySelected();
+        return;
+      }
+      
       if (errorMessage) {
         setShowSelector(true);
         return;
       }
+      
       if (window.aistudio && await window.aistudio.hasSelectedApiKey()) {
         onKeySelected();
       } else {

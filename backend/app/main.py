@@ -16,7 +16,6 @@ app.add_middleware(
 app.include_router(api_router, prefix="/api/v1")
 
 app.mount("/uploads", StaticFiles(directory="app/uploads"), name="uploads")
-app.mount("/", StaticFiles(directory="frontend/dist", html=True), name="static")
 
 @app.get("/health")
 def health_check():
